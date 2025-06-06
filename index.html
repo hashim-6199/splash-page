@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mozilla Splash Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #eee;
+    }
+
+    .logo {
+      width: 140px;
+      margin: 2rem auto 0;
+      display: block;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .media-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background 0.5s;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .media-box:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    img, video {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    button {
+      margin: 2rem auto;
+      display: block;
+      padding: 12px 30px;
+      background: #fff;
+      color: #6a11cb;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background: #ffccff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #ffccff; }
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float 20s infinite linear;
+    }
+
+    .shape1 { width: 150px; height: 150px; background: #fff; top: 10%; left: 5%; }
+    .shape2 { width: 100px; height: 100px; background: #f5a; top: 60%; left: 80%; animation-delay: 5s; }
+    .shape3 { width: 120px; height: 120px; background: #0ff; top: 30%; left: 50%; animation-delay: 10s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+      100% { transform: translateY(0px) rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .media-box {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating background elements -->
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
+  <div class="shape shape3"></div>
+
+  <header>
+    <h1>Welcome to Mozilla</h1>
+    <p>The future of open-source starts here 🌐</p>
+    <img class="logo" src="mozilla-logo.png" alt="Mozilla Logo">
+
+  <section class="content">
+    <div class="media-box">
+      <img src="firefox-browser.jpg" alt="Mozilla Community">
+      <p>Empowering communities through open technology and web literacy.</p>
+    </div>
+
+    <div class="media-box">
+      <video controls>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>A glimpse into creative possibilities with open web media!</p>
+    </div>
+
+    <div class="media-box">
+      <img src="open-internet.jpg" alt="Open Internet">
+      <p>Mozilla fights for an open and accessible internet for all users.</p>
+    </div>
+  </section>
+
+  <button onclick="toggleTheme()">✨ Toggle Background</button>
+
+  <footer>
+    © 2025 Mozilla Splash Project | Built with by Gokul
+  </footer>
+
+  <script>
+    let funky = false;
+    function toggleTheme() {
+      document.body.style.background = funky
+        ? "linear-gradient(135deg, #6a11cb, #2575fc)"
+        : "linear-gradient(135deg, #ff9a9e, #fad0c4)";
+      funky = !funky;
+    }
+  </script>
+
+</body>
+</html>
